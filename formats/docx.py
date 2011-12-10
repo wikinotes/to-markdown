@@ -45,9 +45,6 @@ def markdownify(file):
 
 def opendocx(file):
     '''Open a docx file, return a document XML tree'''
-    f = open("test.tmp",'w')
-    f.write("la")
-    f.close()
     mydoc = zipfile.ZipFile(file)
     xmlcontent = mydoc.read('word/document.xml')
     document = etree.fromstring(xmlcontent)
